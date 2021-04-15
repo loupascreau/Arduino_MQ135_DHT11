@@ -1,19 +1,19 @@
-#include <LiquidCrystal.h>
-#include "DHT.h"
-#include "MQ135.h"
+#include <LiquidCrystal.h>          //Lib for the LCD screen
+#include "DHT.h"                    //Lib for the Temperature sensor (DHT11)
+#include "MQ135.h"                  //Lib for the Air Quality sensor (MQ135)            
 #define DHTPIN 6
 #define DHTTYPE DHT11
 
-const int ANALOGPIN = 0;
-MQ135 gasSensor = MQ135(ANALOGPIN);
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int ANALOGPIN = 0;                                      //PIN MQ135 sensor
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;   //PIN LCD
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 DHT dht(DHTPIN, DHTTYPE);
+MQ135 gasSensor = MQ135(ANALOGPIN);
 
 void setup()
 {
-  lcd.begin(16, 2);
-  dht.begin();
+  lcd.begin(16, 2);           //LCD initialization 
+  dht.begin();                //DHT sensor initialization
 }
 
 void loop() 
@@ -49,5 +49,4 @@ void loop()
   lcd.print(h);
   lcd.setCursor(15, 1);
   lcd.print("%");
-  delay(100);
 }
