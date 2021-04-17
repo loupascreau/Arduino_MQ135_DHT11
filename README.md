@@ -1,6 +1,6 @@
 # Arduino_MQ135_DHT11
 Humidity / Temperature sensor with Air Quality sensor
-<h2>Montage éléctronique</2>
+<h2>Montage éléctronique</h2>
 <img src="images/image3.jpeg" width = "700">
 <img src="images/image2.jpeg" width = "700">
 <img src="images/image1.jpeg" width = "700">
